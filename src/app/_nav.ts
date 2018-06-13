@@ -1,3 +1,4 @@
+//file này là file tạo menu trái
 export const navItems = [
   {
     name: 'Trang chủ',
@@ -18,8 +19,28 @@ export const navItems = [
     icon: 'icon-drop'
   },
   {
-    name: 'Typography',
-    url: '/category/category',
+    name: 'Phổ biến pháp luật',
+    url: '/file',
+    icon: 'icon-pencil'
+  },
+  {
+    name: 'Văn bản pháp quy',
+    url: '/vanbanphapquy',
+    icon: 'icon-pencil'
+  },
+  {
+    name: 'Hình ảnh hoạt động',
+    url: '/hinhanhhoatdong',
+    icon: 'icon-pencil'
+  },
+  {
+    name: 'Liên hệ',
+    url: '/lienhe',
+    icon: 'icon-pencil'
+  },
+  {
+    name: 'Hỏi đáp',
+    url: '/hoidap',
     icon: 'icon-pencil'
   },
   {

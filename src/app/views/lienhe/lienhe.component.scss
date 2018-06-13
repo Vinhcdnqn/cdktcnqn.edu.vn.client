@@ -1,0 +1,11 @@
+.headerTable thead>tr {
+    text-align: center;
+    color: brown;
+    font-weight: bold;
+}
+.headerTable thead>tr>th {
+    vertical-align: middle;
+}
+.headerTable tbody>tr>td:last-child{
+    white-space: nowrap;
+}

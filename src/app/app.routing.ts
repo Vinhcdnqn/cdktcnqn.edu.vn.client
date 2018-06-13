@@ -12,8 +12,9 @@ import { AuthGuard } from './core/guards/auth.guard';
 
 export const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'login',
+    //cái này là chỗ khi chạy localhost:4200 là nó nhận đầu tiên
+    path: '',//trống ko có gì
+    redirectTo: 'dashboard',//thay thành cái này khỏi chuyển login
     pathMatch: 'full',
     canActivate: [AuthGuard]
   },
@@ -30,10 +31,11 @@ export const routes: Routes = [
     data: {
       title: 'Page 500'
     }
-  },
+  }, 
   {
+    //đây là chỗ nãy định nghĩa
     path: 'login',
-    loadChildren: './login/login.module#LoginModule'
+    loadChildren: './login/login.module#LoginModule'//nó mở module này
   },
   {
     path: 'register',
@@ -46,9 +48,54 @@ export const routes: Routes = [
     path: '',
     component: DefaultLayoutComponent,
     data: {
-      title: 'Home'
+      title: 'Danh mục'
     },
     children: [
+      {
+        path: 'file',
+        children: [
+          {
+            path: '',
+            loadChildren: './views/file/file.module#FileModule'
+          }
+        ]
+      },
+      {
+        path: 'vanbanphapquy',
+        children: [
+          {
+            path: '',
+            loadChildren: './views/vanbanphapquy/vanbanphapquy.module#VanbanphapquyModule'
+          }
+        ]
+      },
+      {
+        path: 'lienhe',
+        children: [
+          {
+            path: '',
+            loadChildren: './views/lienhe/lienhe.module#LienheModule'
+          }
+        ]
+      },
+      {
+        path: 'hoidap',
+        children: [
+          {
+            path: '',
+            loadChildren: './views/hoidap/hoidap.module#HoidapModule'
+          }
+        ]
+      },
+      {
+        path: 'hinhanhhoatdong',
+        children: [
+          {
+            path: '',
+            loadChildren: './views/hinhanhhoatdong/hinhanhhoatdong.module#HinhanhhoatdongModule'
+          }
+        ]
+      },
       {
         path: 'base',
         loadChildren: './views/base/base.module#BaseModule'
@@ -76,11 +123,12 @@ export const routes: Routes = [
       {
         path: 'theme',
         loadChildren: './views/theme/theme.module#ThemeModule'
-      },
+      },      
       {
         path: 'widgets',
         loadChildren: './views/widgets/widgets.module#WidgetsModule'
-      }
+      },
+
     ]
   }
 ];

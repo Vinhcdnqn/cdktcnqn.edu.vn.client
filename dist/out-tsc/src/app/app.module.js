@@ -33,6 +33,7 @@ var ng2_charts_1 = require("ng2-charts/ng2-charts");
 var utility_service_1 = require("./core/services/utility.service");
 var authen_service_1 = require("./core/services/authen.service");
 var notification_service_1 = require("./core/services/notification.service");
+var auth_guard_1 = require("./core/guards/auth.guard");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -57,7 +58,6 @@ var AppModule = /** @class */ (function () {
             ].concat(APP_CONTAINERS, [
                 _404_component_1.P404Component,
                 _500_component_1.P500Component,
-                // LoginComponent,
                 register_component_1.RegisterComponent
             ]),
             providers: [{
@@ -66,7 +66,8 @@ var AppModule = /** @class */ (function () {
                 },
                 utility_service_1.UtilityService,
                 authen_service_1.AuthenService,
-                notification_service_1.NotificationService
+                notification_service_1.NotificationService,
+                auth_guard_1.AuthGuard
             ],
             bootstrap: [app_component_1.AppComponent]
         })

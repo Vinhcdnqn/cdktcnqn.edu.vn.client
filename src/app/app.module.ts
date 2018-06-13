@@ -45,6 +45,7 @@ import { AuthenService } from './core/services/authen.service'
 import { NotificationService } from './core/services/notification.service'
 import { AuthGuard } from './core/guards/auth.guard';
 
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -65,7 +66,8 @@ import { AuthGuard } from './core/guards/auth.guard';
     ...APP_CONTAINERS,
     P404Component,
     P500Component,
-    RegisterComponent
+    RegisterComponent,
+
   ],
   providers: [{
     provide: LocationStrategy,

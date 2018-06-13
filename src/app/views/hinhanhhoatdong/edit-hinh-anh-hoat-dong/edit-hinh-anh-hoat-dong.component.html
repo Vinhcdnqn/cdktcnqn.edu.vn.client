@@ -1,0 +1,86 @@
+<div class="card">
+  <div class="card-header">
+    Chỉnh sửa hình ảnh hoạt động
+  </div>
+  <div class="card-body">
+    <!-- Nhập liệu -->
+    <div class="form-group row">
+      <label class="col-md-2 col-form-label" for="text-input">Tên hoạt động</label>
+      <div class="col-md-10">
+        <input type="text" id="text-input" name="text-input" class="form-control" placeholder="Hưởng ứng tháng công nhân và các hoạt động mừng sinh nhật Bác năm 2018">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label class="col-md-2 col-form-label" for="textarea-input">Nội dung hoạt động</label>
+      <div class="col-md-10">
+        <textarea id="textarea-input" name="textarea-input" rows="4" class="form-control" placeholder="Trong khuôn khổ các hoạt động hưởng ứng Tháng công nhân năm 2018 và kỷ niệm lần thứ 128 ngày sinh của Chủ tịch Hồ Chí Minh, tối ngày 17 tháng 5 năm 2018, Công đoàn Cơ sở Trường Cao đẳng Kỹ thuật Công nghệ Quy Nhơn đã phối hợp với Đoàn Thanh niên Trường tổ chức Lễ Mít tinh kỷ niệm 128 năm ngày sinh Chủ tịch Hồ Chí Minh. Đến dự Lễ có bà Nguyễn Thị Phương Loan Chủ tịch Công đoàn Viên chức tỉnh Bình Định; Đảng ủy, Ban giám hiệu Nhà trường, đặc biệt là 150 đoàn viên công đoàn và trên 200 ĐVTN  tiêu biểu của Trường Cao đẳng Kỹ thuật Công nghệ Quy Nhơn."></textarea>
+      </div>
+    </div>
+    <div class="=form-group row">
+      <label class="col-md-2 col-form-label" for="email-input">Hiển thị trên Website</label>
+      <div class="col-md-10">
+        <label class="switch switch-label switch-primary">
+          <input type="checkbox" class="switch-input" checked>
+          <span class="switch-slider" data-checked="Bật" data-unchecked="Tắt"></span>
+        </label>
+      </div>
+    </div>
+    <!-- thay thành upfile ảnh -->
+    <div class="form-group row">
+      <label class="col-md-2 col-form-label" for="file-multiple-input">Hình ảnh hoạt động</label>
+      <div class="col-md-10">
+        <input type="file" id="file-multiple-input" name="file-multiple-input" multiple>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success btn-sm">
+        <span class="fa fa-plus"></span> Cập nhật</button>
+      <button type="button" class="btn btn-link btn-sm" (click)="myModal.hide()">
+        <span class="fa fa-mail-reply"></span> Quay lại</button>
+    </div>
+  </div>
+</div>
+<div class="card">
+  <div class="card-header">
+    Hình ảnh hoạt động đính kèm
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <!-- HÌnh ảnh -->
+      <div class="col-sm-12 col-md-4 imgMarginBot">
+        <img src="http://cdktcnqn.edu.vn/Media/Images/MT%20Mung%20SN%20Bac%202018_001.JPG" class="position-relative" width="100%">
+        <!-- thêm button remove vào trong ảnh luôn -->
+        <div class="col-md-9 col-form-label position-absolute" style="z-index: 999; left: 5px; top:0px">
+          <button type="button" class="btn btn-danger btn-sm">
+            <span class="fa fa-trash-o"></span>
+          </button>
+          <!-- sau nay ghep button vao trong cai hinh luon -->
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4 imgMarginBot">
+        <img src="http://cdktcnqn.edu.vn/Media/Images/MT%20Mung%20SN%20Bac%202018_002.JPG" class="=position-relative" width="100%">
+        <div class="col-md-9 col-form-label position-absolute" style="z-index: 999; left: 5px; top:0px">
+          <button type="button" class="btn btn-danger btn-sm">
+            <span class="fa fa-trash-o"></span>
+          </button>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4 imgMarginBot">
+        <img src="http://cdktcnqn.edu.vn/Media/Images/MT%20Mung%20SN%20Bac%202018_004.JPG" class="position-relative" width="100%">
+        <div class="col-md-9 col-form-label position-absolute" style="z-index: 999; left: 5px; top:0px">
+          <button type="button" class="btn btn-danger btn-sm">
+            <span class="fa fa-trash-o"></span>
+          </button>
+        </div>
+      </div>
+      <div class="col-sm-12 col-md-4 imgMarginBot">
+        <img src="http://cdktcnqn.edu.vn/Media/Images/MT%20Mung%20SN%20Bac%202018_004.JPG" class="position-relative" width="100%">
+        <div class="col-md-9 col-form-label position-absolute" style="z-index: 999; left: 5px; top:0px">
+          <button type="button" class="btn btn-danger btn-sm">
+            <span class="fa fa-trash-o"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

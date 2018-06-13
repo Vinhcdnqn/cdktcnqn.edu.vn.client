@@ -1,0 +1,157 @@
+<div class="card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-7">
+        <search-list (change)="criteriaChange($event)"></search-list>
+      </div>
+      <div class="col btnThemMoi">
+        <button class="btn btn-success pull-right" data-toggle="modal" (click)="myModal.show()">
+          <span class="fa fa-plus"></span> Thêm mới
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-sm table-bordered table-hover headerTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Nội dung</th>
+            <th>Ngày ban hành</th>
+            <th>Chức năng</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-center">1</td>
+            <td>
+              <a href="#">CÔNG ƯỚC CHỐNG TRA TẤN VÀ CÁC HÌNH THỨC TRỪNG PHẠT HAY ĐỐI XỬ TÀN ÁC, VÔ NHÂN ĐẠO HOẶC HẠ THẤP NHÂN PHẨM, 1984
+              </a>
+            </td>
+            <td class="text-center">07/06/2018</td>
+            <td class="text-center">
+              <button type="button" class="btn btn-primary btn-sm">
+                <span class="cui-pencil icons"></span>
+              </button>&nbsp;
+              <button type="button" class="btn btn-danger btn-sm">
+                <span class="fa fa-trash icons"></span>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>CÔNG ƯỚC CHỐNG TRA TẤN VÀ CÁC HÌNH THỨC TRỪNG PHẠT HAY ĐỐI XỬ TÀN ÁC, VÔ NHÂN ĐẠO HOẶC HẠ THẤP NHÂN PHẨM, 1984
+            </td>
+            <td class="text-center">07/06/2018</td>
+            <td>
+              <button type="button" class="btn btn-primary btn-sm">
+                <span class="cui-pencil icons"></span>
+              </button>&nbsp;
+              <button type="button" class="btn btn-danger btn-sm">
+                <span class="fa fa-trash icons"></span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <nav>
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="#">Prev</a>
+        </li>
+        <li class="page-item active">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">4</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+<div bsModal #myModal="bs-modal" [config]="{backdrop: 'static', keyboard: false}" class="modal fade" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-success modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{ modalTitle }}</h4>
+        <button type="button" class="close" (click)="myModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="text-input">Tài liệu phổ biến pháp luật ngày:</label>
+            <div class="col-md-9">
+              <input type="date" id="text-input" name="text-input" class="form-control" placeholder="dd/mm/yyyy">
+              <span class="help-block">Nhập ngày tháng năm</span>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="textarea-input">Nội dung tóm tắt</label>
+            <div class="col-md-9">
+              <textarea id="textarea-input" name="textarea-input" rows="3" class="form-control" placeholder="Nội dung"></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="email-input">Hiển thị tóm tắt</label>
+            <div class="col-md-9">
+              <label class="switch switch-label switch-primary">
+                <input type="checkbox" class="switch-input" checked>
+                <span class="switch-slider" data-checked="Bật" data-unchecked="Tắt"></span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="email-input">Hiển thị tiêu đề</label>
+            <div class="col-md-9">
+              <label class="switch switch-label switch-primary">
+                <input type="checkbox" class="switch-input" checked>
+                <span class="switch-slider" data-checked="Bật" data-unchecked="Tắt"></span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="email-input">Hiển thị lên Website</label>
+            <div class="col-md-9">
+              <label class="switch switch-label switch-primary">
+                <input type="checkbox" class="switch-input" checked>
+                <span class="switch-slider" data-checked="Bật" data-unchecked="Tắt"></span>
+              </label>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="file-multiple-input">File đính kèm</label>
+            <div class="col-md-9">
+              <input type="file" id="file-multiple-input" name="file-multiple-input" multiple>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success btn-sm">
+          <span class="fa fa-plus"></span> Cập nhật</button>
+        <button type="button" class="btn btn-link btn-sm" (click)="myModal.hide()">
+          <span class="fa fa-plus"></span> Hủy</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+
