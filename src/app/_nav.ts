@@ -1,4 +1,3 @@
-//file này là file tạo menu trái
 export const navItems = [
   {
     name: 'Trang chủ',
