@@ -17,7 +17,8 @@ export const routes: Routes = [
     FormsModule,
     RouterModule.forChild(routes)
   ],
-  providers: [ AuthenService, 
+  providers: [
+    AuthenService,
     NotificationService
   ],
   declarations: [LoginComponent]

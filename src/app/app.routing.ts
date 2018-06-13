@@ -13,7 +13,7 @@ import { AuthGuard } from './core/guards/auth.guard';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'login',
+    redirectTo: 'test',
     pathMatch: 'full',
     canActivate: [AuthGuard]
   },
