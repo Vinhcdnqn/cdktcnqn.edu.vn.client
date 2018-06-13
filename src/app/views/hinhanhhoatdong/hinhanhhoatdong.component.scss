@@ -1,0 +1,22 @@
+.headerTable thead>tr {
+    text-align: center;
+    color: brown;
+    font-weight: bold;
+}
+.headerTable thead>tr>th {
+    vertical-align: middle;
+}
+.headerTable tbody>tr>td:last-child{
+    white-space: nowrap;
+}
+
+p{
+    background-color: teal;
+    color:yellow;
+    text-align: justify;
+    width: 90%;
+}
+
+.imgMarginBot{
+    margin-bottom: 5px;
+}

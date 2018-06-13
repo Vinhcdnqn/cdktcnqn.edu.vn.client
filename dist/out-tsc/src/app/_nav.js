@@ -2,7 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.navItems = [
     {
-        name: 'Dashboard',
+        name: 'Trang chủ',
         url: '/dashboard',
         icon: 'icon-speedometer',
         badge: {
@@ -12,16 +12,16 @@ exports.navItems = [
     },
     {
         title: true,
-        name: 'Theme'
+        name: 'Danh mục'
     },
     {
-        name: 'Colors',
+        name: 'Nhóm tin',
         url: '/theme/colors',
         icon: 'icon-drop'
     },
     {
         name: 'Typography',
-        url: '/theme/typography',
+        url: '/category/category',
         icon: 'icon-pencil'
     },
     {

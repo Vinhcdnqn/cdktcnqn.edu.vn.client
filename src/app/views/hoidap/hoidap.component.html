@@ -1,0 +1,149 @@
+<div class="card">
+  <div class="card-header">
+    <div class="row">
+      <div class="col-7">
+        <search-list (change)="criteriaChange($event)"></search-list>
+      </div>
+      <div class="col btnThemMoi">
+        <button class="btn btn-success pull-right" data-toggle="modal" (click)="myModal.show()">
+          <span class="fa fa-plus"></span> Thêm mới
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered table-sm headerTable">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Câu hỏi</th>
+            <th>Câu trả lời</th>
+            <th>Người hỏi</th>
+            <th>Địa chỉ email</th>
+            <th>Hiển thị</th>
+            <th>Chức năng</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-center align-middle">1</td>
+            <td class="align-middle">Em hiện tại em đang ở Gia Lai. Sau khi thi THPT QG xong, em muốn học trường mình ngành CN ô tô bằng hình thức
+              xét học bạ thì cần đăng kí hồ sơ như thế nào ạ?</td>
+            <td class="align-middle">Sau khi có kết quả thi tốt nghiệp THPT Quốc gia, em mua hồ sơ hoặc tải
+              <a href="#">tại đây</a> in ra làm và gửi hồ sơ theo địa chỉ Phòng Đào tạo, 172 An Dương Vương- TP Quy Nhơn - Tỉnh Bình
+              Định, SĐT: 0256.2210.602</td>
+            <td class="align-middle text-nowrap">Nguyễn Văn Thời</td>
+            <td class="align-middle text-nowrap">thoi.ho.140@gmail.com</td>
+            <td class="align-middle text-nowrap">
+              <label class="switch switch-label switch-primary">
+                <input type="checkbox" class="switch-input" checked disabled>
+                <span class="switch-slider" data-checked="Bật" data-unchecked="Tắt"></span>
+              </label>
+            </td>
+            <td class="text-center">
+              <button type="button" class="btn btn-primary btn-sm">
+                <span class="cui-pencil icons"></span>
+              </button>&nbsp;
+              <button type="button" class="btn btn-danger btn-sm">
+                <span class="fa fa-trash icons"></span>
+              </button>
+            </td>
+          </tr>
+          <tr>
+            <td class="text-center align-middle">2</td>
+            <td class="align-middle">Thời gian nhận hồ sơ đến khi nào?</td>
+            <td class="align-middle">Thời gian nhận hồ sơ đến hết 30/12/2018.</td>
+            <td class="align-middle text-nowrap">Trương Thị Trang Đài</td>
+            <td class="align-middle text-nowrap">trangdai@gmail.com</td>
+            <td class="align-middle text-nowrap">
+              <label class="switch switch-label switch-primary">
+                <input type="checkbox" class="switch-input" disabled>
+                <span class="switch-slider" data-checked="Bật" data-unchecked="Tắt"></span>
+              </label>
+            </td>
+            <td class="text-center">
+              <button type="button" class="btn btn-primary btn-sm">
+                <span class="cui-pencil icons"></span>
+              </button>&nbsp;
+              <button type="button" class="btn btn-danger btn-sm">
+                <span class="fa fa-trash icons"></span>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <nav>
+      <ul class="pagination">
+        <li class="page-item">
+          <a class="page-link" href="#">Prev</a>
+        </li>
+        <li class="page-item active">
+          <a class="page-link" href="#">1</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">2</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">3</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">4</a>
+        </li>
+        <li class="page-item">
+          <a class="page-link" href="#">Next</a>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
+<div bsModal #myModal="bs-modal" [config]="{backdrop: 'static', keyboard: false}" class="modal fade" tabindex="-1" role="dialog"
+  aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-success modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">{{ modalTitle }}</h4>
+        <button type="button" class="close" (click)="myModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="textarea-input">Câu hỏi:</label>
+            <div class="col-md-9">
+              <textarea id="textarea-input" name="textarea-input" rows="3" class="form-control" placeholder="Nội dung">Em hiện tại em đang ở Gia Lai. Sau khi thi THPT QG xong, em muốn học trường mình ngành CN ô tô bằng hình thức xét học bạ thì cần đăng kí hồ sơ như thế nào ạ?</textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="textarea-input">Trả lời</label>
+            <div class="col-md-9">
+              <textarea id="textarea-input" name="textarea-input" rows="3" class="form-control" placeholder="Câu trả lời"></textarea>
+            </div>
+          </div>
+          <div class="form-group row">
+            <label class="col-md-3 col-form-label" for="email-input">Hiển thị ra Website</label>
+            <div class="col-md-9">
+              <label class="switch switch-label switch-primary">
+                <input type="checkbox" class="switch-input" unchecked>
+                <span class="switch-slider" data-checked="Bật" data-unchecked="Tắt"></span>
+              </label>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success btn-sm">
+          <span class="fa fa-plus"></span> Cập nhật</button>
+        <button type="button" class="btn btn-link btn-sm" (click)="myModal.hide()">
+          <span class="fa fa-plus"></span> Hủy</button>
+      </div>
+    </div>
+    <!-- /.modal-content -->
+  </div>
+  <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

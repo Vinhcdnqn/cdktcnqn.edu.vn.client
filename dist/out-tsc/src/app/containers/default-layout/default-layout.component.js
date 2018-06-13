@@ -30,7 +30,6 @@ var DefaultLayoutComponent = /** @class */ (function () {
     }
     DefaultLayoutComponent.prototype.logout = function () {
         localStorage.removeItem(system_constants_1.SystemConstants.CURRENT_USER);
-        console.log(localStorage.getItem(system_constants_1.SystemConstants.CURRENT_USER));
         this.utilityService.navigate(url_constants_1.UrlConstants.LOGIN);
     };
     DefaultLayoutComponent = __decorate([
