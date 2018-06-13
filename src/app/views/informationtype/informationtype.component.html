@@ -1,6 +1,6 @@
 <div class="page-title">
   <div class="title_left">
-    <h2 style="color:forestgreen">Quản Lý thể loại</h2>
+    <h2 style="color:forestgreen">Quản Lý loại tin</h2>
   </div>
 </div>
 <div class="title_right">
@@ -39,7 +39,7 @@
           <thead>
             <tr align="center" style="color:saddlebrown ">
               <th>ID</th>
-              <th>Tên thể loại</th>
+              <th>Tên loại tin</th>
               <th>Người tạo</th>
               <th>Ngày tạo</th>
               <th>Status</th>
@@ -48,7 +48,7 @@
           <tbody>
             <tr align="center" style="background-color:rgb(238, 234, 234)">
               <td>1</td>
-              <td>Khoa cntt</td>
+              <td>Tin ngắn</td>
               <td>Admin</td>
               <td>6/6/2018</td>
               <td>
@@ -85,8 +85,8 @@
 <div bsModal #primaryModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header" style="height: 100%; width: 100%; border-collapse: collapse;color: #ffffff; background-color: #20A8D8; float: left;" >  
-        <h4 class="modal-title">Thêm mới thể loại</h4>
+      <div class="modal-header" style="height: 100%; width: 100%; border-collapse: collapse;color: #ffffff; background-color: #20A8D8; float: left;">
+        <h4 class="modal-title">Thêm mới loại tin</h4>
         <button type="button" class="close" (click)="primaryModal.hide()" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -101,10 +101,10 @@
               <div class="card-body">
                 <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
                   <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="text-input">Tên thể loại</label>
+                    <label class="col-md-3 col-form-label" for="text-input">Tên loại tin</label>
                     <div class="col-md-9">
                       <input type="text" class="form-control" #name="ngModel" required name="name" #name="ngModel" ngModel/>
-                      <span class="help-block">Nhập tên thể loại</span>
+                      <span class="help-block">Nhập tên loại tin</span>
                     </div>
                   </div>
                   <div class="form-group row">
@@ -134,12 +134,7 @@
                     </div>
                   </div>
 
-                  <div class="form-group row">
-                    <label class="col-md-3 col-form-label" for="text-input">Số thứ tự</label>
-                    <div class="col-md-9">
-                      <input type="text" class="form-control" required name="name" #name="ngModel" ngModel/>
-                    </div>
-                  </div>
+
 
                   <div class="form-group row">
                     <label class="col-md-3 col-form-label" for="text-input">Ngày tạo</label>

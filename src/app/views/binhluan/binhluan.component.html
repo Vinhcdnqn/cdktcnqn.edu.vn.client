@@ -1,0 +1,292 @@
+<div class="page-title">
+  <div class="title_left">
+    <h2 style="color:forestgreen">Quản lý bình luận</h2>
+  </div>
+</div>
+<div class="title_right">
+  <div class="col-md-4 col-sm-5  form-group pull-right top_search">
+
+    <div class="col-md-16">
+      <div class="input-group">
+        <input type="text" id="input2-group2" name="input2-group2" class="form-control" placeholder="Tìm kiếm...">
+        <span class="input-group-append">
+          <button type="button" class="btn btn-primary">
+            <i class="fa fa-search"></i> Search</button>
+        </span>
+      </div>
+      <p> </p>
+      <div align="right">
+        <button type="button" class="btn btn-primary" data-toggle="modal" (click)="primaryModal.show()">
+          Thêm mới
+        </button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+
+<div class="clearfix"></div>
+
+<!-- table -->
+<div class="row">
+  <div class="col-lg-12">
+    <div class="card">
+
+      <div class="card-body">
+        <table class="table table-hover table-responsive-md table-fixed">
+          <thead>
+            <tr align="center" style="color:saddlebrown ">
+              <th>ID</th>
+              <th>Tên bình luận</th>
+              <th>Email</th>
+              <th>Tin tức</th>
+              <th>Ngày tạo </th>
+             
+              <th>Người tạo</th>
+              <th>Trạng Thái</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr align="center" style="background-color:rgb(238, 234, 234)">
+              <td>1</td>
+              <td>Vinh hùng thi lúa về ra sao</td>
+              <td> huuthicdnqn@gmail.com </td>
+              <td>Lúa về</td>
+              <td>11/6/2018</td>
+              <td>Admin</td>
+             
+              <td>
+                <label class="switch switch-label switch-pill switch-outline-primary-alt">
+                  <input type="checkbox" class="switch-input" checked>
+                  <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                </label>
+              </td>
+              <td>
+                <button class="btn btn-primary" (click)="primaryModal.show()">
+                  <i class="fa fa-pencil-square-o"></i>
+                </button>
+                <button class="btn btn-danger">
+                  <i class="fa fa-trash"></i>
+                </button>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+        <pagination [totalItems]="30"></pagination>
+
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<div bsModal #primaryModal="bs-modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="height: 100%; width: 100%; border-collapse: collapse;color: #ffffff; background-color: #20A8D8; float: left;">
+        <h4 class="modal-title">Thêm mới bình luận</h4>
+        <button type="button" class="close" (click)="primaryModal.hide()" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <!-- 'form' -->
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+
+              <div class="card-body">
+
+
+                <div>
+
+                  <tabset #staticTabs>
+
+                    <tab heading="Thông tin 1">
+
+                      <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+
+
+
+
+                        <div class="form-group row">
+                          <label class="col-md-3 col-form-label" for="select1">Tin tức</label>
+                          <div class="col-md-9">
+                            <select id="select1" name="select1" class="form-control">
+                              <option value="0">--Chọn Tin tức--</option>
+                              <option value="1">Option #1</option>
+                              <option value="2">Option #2</option>
+                              <option value="3">Option #3</option>
+                            </select>
+                          </div>
+                        </div>
+                       
+
+                        <div class="form-group row">
+                          <label class="col-md-3 col-form-label" for="text-input">Tiêu đề</label>
+                          <div class="col-md-9">
+                            <input type="text" name="text-input" class="form-control" placeholder="">
+                            <span class="help-block">Nhập Tiêu đề</span>
+                          </div>
+                        </div>
+                      
+
+                     
+
+
+                      
+                     
+                        <div class="form-group row">
+                          <label class="col-md-3 col-form-label" for="textarea-input">Nội dung</label>
+                          <div class="col-md-12">
+                            <app-tiny [elementId]="'my-editor-id'" (onEditorKeyup)="keyupHandlertFunction($event)">
+                            </app-tiny>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-md-3 col-form-label" for="email-input">Email</label>
+                          <div class="col-md-9">
+                            <input type="email" class="form-control" placeholder="">
+                            <span class="help-block">Nhập Email </span>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-md-3 col-form-label" for="text-input">Ngày kích hoạt</label>
+                          <div class="col-md-9">
+                            <input type="text" placeholder="Nhập Ngày tháng Năm" class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY' }">
+                            <span class="help-block">Nhập ngày kích hoạt </span>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-md-3 col-form-label" for="text-input">Người kích hoạt</label>
+                          <div class="col-md-9">
+                            <input type="text" class="form-control" placeholder="">
+                            <span class="help-block">Nhập người kích hoạt</span>
+                          </div>
+                        </div>
+
+                      </form>
+
+                    </tab>
+                    <tab heading="Thông tin 2">
+
+                      <form action="" method="post" enctype="multipart/form-data" class="form-horizontal">
+
+                        <div class="form-group row">
+                          <label class="col-md-3 col-form-label" for="text-input">Ngày tạo</label>
+                          <div class="col-md-9">
+                            <input type="text" placeholder="Nhập Ngày tháng Năm" class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY' }">
+                            <span class="help-block">Nhập ngày tạo </span>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-md-3 col-form-label" for="text-input">Người tạo</label>
+                          <div class="col-md-9">
+                            <input type="text" class="form-control" placeholder="">
+                            <span class="help-block">Nhập người tạo</span>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-md-3 col-form-label" for="text-input">Ngày sửa</label>
+                          <div class="col-md-9">
+                            <input type="text" placeholder="Nhập Ngày tháng Năm" class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY' }">
+                            <span class="help-block">Nhập ngày sửa </span>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-md-3 col-form-label" for="text-input">Người sửa</label>
+                          <div class="col-md-9">
+                            <input type="text" class="form-control" placeholder="">
+                            <span class="help-block">Nhập người sửa </span>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-md-3 col-form-label" for="disabled-input">Đã xóa</label>
+                          <div class="col-md-9">
+                            <label class="switch switch-label switch-pill switch-outline-primary-alt">
+                              <input type="checkbox" class="switch-input" checked>
+                              <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-md-3 col-form-label" for="text-input">Ngày xóa</label>
+                          <div class="col-md-9">
+                            <input type="text" placeholder="Nhập Ngày tháng Năm" class="form-control" bsDatepicker [bsConfig]="{ dateInputFormat: 'DD-MM-YYYY' }">
+                            <span class="help-block">Nhập ngày xóa </span>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-md-3 col-form-label" for="text-input">Người xóa</label>
+                          <div class="col-md-9">
+                            <input type="text" class="form-control" placeholder="">
+                            <span class="help-block">Nhập người xóa</span>
+                          </div>
+                        </div>
+                        <div class="form-group row">
+                          <label class="col-md-3 col-form-label" for="disabled-input">Kích hoạt</label>
+                          <div class="col-md-9">
+                            <label class="switch switch-label switch-pill switch-outline-primary-alt">
+                              <input type="checkbox" class="switch-input" checked>
+                              <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                            </label>
+                          </div>
+                        </div>
+
+                        <div class="form-group row">
+                          <label class="col-md-3 col-form-label" for="disabled-input">Hiển thị trang chủ</label>
+                          <div class="col-md-9">
+                            <label class="switch switch-label switch-pill switch-outline-primary-alt">
+                              <input type="checkbox" class="switch-input" checked>
+                              <span class="switch-slider" data-checked="On" data-unchecked="Off"></span>
+                            </label>
+                          </div>
+                        </div>
+                   
+                      </form>
+
+                    </tab>
+
+                  </tabset>
+                 
+              
+              </div>
+
+
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="primaryModal.hide()">Hủy</button>
+          <button type="button" class="btn btn-primary">Lưu</button>
+        </div>
+      </div>
+      <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+  </div>
+  <!-- /.modal -->
